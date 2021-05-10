@@ -289,13 +289,13 @@ if __name__ == '__main__':
 	
 	seed_everything(SEED)
 
-  post_process = partial(post_process, special_chars='.;!')
+	post_process = partial(post_process, special_chars='.;!')
 
-  text_preprocess = PreprocessText(preprocess_func=process, 
-                                   postprocess_func=post_process,
-                                   sent_split_chars='.;!')
+	text_preprocess = PreprocessText(preprocess_func=process, 
+					 postprocess_func=post_process,
+					 sent_split_chars='.;!')
 
-  batch_size = 32
+	batch_size = 32
 	dataset = LMDataset('data/LM.txt', text_preprocess)
 
 	config = {
